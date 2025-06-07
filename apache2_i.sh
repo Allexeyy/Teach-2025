@@ -19,6 +19,12 @@ sudo systemctl enable apache2
 
 # Проверка статуса Apache
 echo "Проверка статуса Apache..."
-sudo systemctl status apache2
-
+echo "======================================="
+ps afx | grep apache2
+echo "======================================="
+ss -ntlp
+echo "======================================="
+systemctl status apache2
+echo "======================================="
 echo "Установка Apache завершена!"
+
