@@ -18,7 +18,10 @@ sudo systemctl start nginx
 sudo systemctl enable nginx
 
 # Проверка статуса Nginx
-echo "Проверка статуса Nginx..."
-sudo systemctl status nginx
-
+echo "======================================="
+ss -ntlp
+echo "======================================="
+ps afx | grep nginx
+echo "======================================="
+systemctl status nginx
 echo "Установка Nginx завершена!"
