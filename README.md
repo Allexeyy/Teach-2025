@@ -1,8 +1,7 @@
 # Teach-2025
-teach linux
-
-My first commit for github
-
-My second commit from local PC to GH
-
-END of commit file
+This file contain configs and scripts files for begin preference IT-bysnes
+1.
+2.
+3.
+4.
+5.
