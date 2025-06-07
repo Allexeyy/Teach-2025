@@ -1,0 +1,14 @@
+# This is the network config written for MySQL-server master
+network:
+  ethernets:
+    enp0s3:
+      dhcp4: no
+      addresses:
+      - 192.168.1.53/24
+      routes:
+        - to: default
+          via: 192.168.1.1
+      nameservers:
+        addresses:
+        - 192.168.1.1
+  version: 2
