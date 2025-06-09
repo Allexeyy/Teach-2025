@@ -37,7 +37,7 @@ echo "============================================================"
 ps -afx | grep mysql
 echo "============================================================"
 
-# Создание пользователя для репликации
-#mysql -e "CREATE USER '$REPL_USER'@'%' IDENTIFIED BY '$REPL_PASS';"
-#mysql -e "GRANT REPLICATION SLAVE ON *.* TO '$REPL_USER'@'%';"
-#mysql -e "FLUSH PRIVILEGES;"
+# Создание репликации
+mysql -u root -e "STOP REPLICA;";
+mysql -u root -e "CHANGE REPLICATION SOURCE TO SOURCE_HOST='$MASTER_IP', SOURCE_USER='$REPL_USER', SOURCE_PASSWORD='$REPL_PASS', SOURCE_AUTO_POSITION = 1, GET_SOURCE_PUBLIC_KEY = 1;";
+mysql -u root -e "START REPLICA;";

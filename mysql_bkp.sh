@@ -16,6 +16,7 @@ for DB in $DBS; do
     BACKUP_FILE="$BACKUP_DIR/${DB}_$(date +'%Y%m%d_%H%M%S').sql"
 
     # Создание бэкапа базы данных
+#    sudo mysqldump -u root --add-drop-table --add-locks --create-options --disable-keys --extended-insert --single-transaction --quick --set-charset --events --routines --triggers --databases "$DB" > "$BACKUP_FILE"
     sudo mysqldump -u root --databases "$DB" > "$BACKUP_FILE"
     
     # Проверка успешности выполнения команды
