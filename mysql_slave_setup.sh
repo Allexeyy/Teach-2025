@@ -7,7 +7,7 @@ MASTER_IP="192.168.1.53"  # IP master сервера
 SLAVE_IP="192.168.1.54"   # IP slave сервера
 
 sudo -i
-hostnamectl set-hostname mysql-master
+hostnamectl set-hostname mysql-slave
 
 # Функция для проверки успешности выполнения предыдущей команды
 check_success() {
@@ -24,14 +24,20 @@ sudo apt install -y mysql-server mysql-client
 check_success "установка MySQL"
 
 #Копирование конфига
-sudo cp ~/repo/mysqld.cnf.master /etc/mysql/mysql.conf.d/mysqld.cnf
+sudo cp /home/alexey/repo/mysqld.cnf.slave /etc/mysql/mysql.conf.d/mysqld.cnf
 
 # Перезапуск MySQL
 sudo systemctl restart mysql
 check_success "перезапуск MySQL"
+echo "============================================================"
 systemctl status mysql
+echo "============================================================"
+ss -ntlp
+echo "============================================================"
+ps -afx | grep mysql
+echo "============================================================"
 
 # Создание пользователя для репликации
-#mysql -u root -e "CREATE USER '$REPL_USER'@'%' IDENTIFIED BY '$REPL_PASS';"
-#mysql -u root -e "GRANT REPLICATION SLAVE ON *.* TO '$REPL_USER'@'%';"
-#mysql -u root -e "FLUSH PRIVILEGES;"
+#mysql -e "CREATE USER '$REPL_USER'@'%' IDENTIFIED BY '$REPL_PASS';"
+#mysql -e "GRANT REPLICATION SLAVE ON *.* TO '$REPL_USER'@'%';"
+#mysql -e "FLUSH PRIVILEGES;"
