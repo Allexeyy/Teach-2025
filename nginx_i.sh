@@ -10,8 +10,8 @@ echo "Установка Nginx..."
 sudo apt install -y nginx
 
 # Копирование конфигов
-cp /home/alexey/repo/nginx.conf /etc/nginx/nginx.conf
-cp /home/alexey/repo/default /etc/nginx/sites-available/default
+sudo cp /home/alexey/repo/nginx.conf /etc/nginx/nginx.conf
+sudo cp /home/alexey/repo/default /etc/nginx/sites-available/default
 
 # Запуск и включение Nginx
 echo "Запуск Nginx..."

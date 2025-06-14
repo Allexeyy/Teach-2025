@@ -6,8 +6,7 @@ DB_NAME="my_db"
 MASTER_IP="192.168.1.53"  # IP master сервера
 SLAVE_IP="192.168.1.54"   # IP slave сервера
 
-sudo -i
-hostnamectl set-hostname mysql-master
+sudo hostnamectl set-hostname mysql-master
 
 # Функция для проверки успешности выполнения предыдущей команды
 check_success() {
@@ -37,6 +36,6 @@ echo "============================================================"
 ps -afx | grep mysql
 
 # Создание пользователя для репликации
-mysql -u root -p -e "CREATE USER '$REPL_USER'@'%' IDENTIFIED BY '$REPL_PASS';"
-mysql -u root -p -e "GRANT REPLICATION SLAVE ON *.* TO '$REPL_USER'@'%';"
-mysql -u root -p -e "FLUSH PRIVILEGES;"
+sudo mysql -u root -p -e "CREATE USER '$REPL_USER'@'%' IDENTIFIED BY '$REPL_PASS';"
+sudo mysql -u root -p -e "GRANT REPLICATION SLAVE ON *.* TO '$REPL_USER'@'%';"
+sudo mysql -u root -p -e "FLUSH PRIVILEGES;"
