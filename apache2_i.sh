@@ -11,6 +11,8 @@ sudo apt install -y apache2
 #Копирование конфигов
 cp /home/alexey/repo/ports.conf /etc/apache2/ports.conf
 cp /home/alexey/repo/000-default.conf /etc/apache2/sites-available/000-default.conf
+cp /home/alexey/repo/index.html1 /var/www/html/index.html
+cp /home/alexey/repo/index.html2 /var/www/html/index.html
 
 # Запуск и включение Apache2
 echo "Запуск Nginx..."
