@@ -25,5 +25,5 @@ ss -ntlp
 echo "======================================="
 ps afx | grep grafana
 echo "======================================="
-systemctl restart grafana-server.service
+sudo systemctl restart grafana-server.service
 systemctl status grafana-server.service
