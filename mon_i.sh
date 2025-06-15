@@ -1,6 +1,6 @@
 #!/bin/bash
 # Установка Prometheus
-sudo update
+sudo apt update
 sudo apt install prometheus prometheus-node-exporter -y
 
 echo "Установка GRAFANA и дополнительного пакета"
