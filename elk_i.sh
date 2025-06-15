@@ -20,7 +20,7 @@ sudo systemctl status kibana.service
 
 #Устновка Logstash и копирование его конфига
 sudo dpkg -i logstash-8.9.1-amd64.deb
-sudo cp /home/alexey/repo/logstash/logstash.yml /etc/logstash/logstash.yml
+sudo cp /home/alexey/repo/logstash.yml /etc/logstash/logstash.yml
 sudo cp /home/alexey/repo/logstash-nginx-es.conf /etc/logstash/conf.d/logstash-nginx-es.conf
 sudo systemctl enable --now logstash.service
 sudo systemctl restart logstash.service
