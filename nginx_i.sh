@@ -17,6 +17,7 @@ cp /home/alexey/repo/default /etc/nginx/sites-available/default
 echo "Запуск Nginx..."
 sudo systemctl start nginx
 sudo systemctl enable nginx
+sudo systemctl restart nginx
 
 # Проверка статуса Nginx
 echo "======================================="
