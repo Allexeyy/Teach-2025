@@ -1,6 +1,6 @@
 #!/bin/bash
 # Установка Prometheus
-sudo update
+sudo apt update
 sudo apt install prometheus prometheus-node-exporter -y
 
 echo "Установка GRAFANA и дополнительного пакета"
@@ -25,4 +25,5 @@ ss -ntlp
 echo "======================================="
 ps afx | grep grafana
 echo "======================================="
+systemctl restart grafana-server.service
 systemctl status grafana-server.service
