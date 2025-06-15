@@ -6,8 +6,7 @@ DB_NAME="my_db"
 MASTER_IP="192.168.1.53"  # IP master сервера
 SLAVE_IP="192.168.1.54"   # IP slave сервера
 
-sudo -i
-hostnamectl set-hostname mysql-slave
+sudo hostnamectl set-hostname mysql-slave
 
 # Функция для проверки успешности выполнения предыдущей команды
 check_success() {
@@ -38,6 +37,6 @@ ps -afx | grep mysql
 echo "============================================================"
 
 # Создание репликации
-mysql -u root -e "STOP REPLICA;";
-mysql -u root -e "CHANGE REPLICATION SOURCE TO SOURCE_HOST='$MASTER_IP', SOURCE_USER='$REPL_USER', SOURCE_PASSWORD='$REPL_PASS', SOURCE_AUTO_POSITION = 1, GET_SOURCE_PUBLIC_KEY = 1;";
-mysql -u root -e "START REPLICA;";
+sudo mysql -u root -e "STOP REPLICA;";
+sudo mysql -u root -e "CHANGE REPLICATION SOURCE TO SOURCE_HOST='$MASTER_IP', SOURCE_USER='$REPL_USER', SOURCE_PASSWORD='$REPL_PASS', SOURCE_AUTO_POSITION = 1, GET_SOURCE_PUBLIC_KEY = 1;";
+sudo mysql -u root -e "START REPLICA;";
