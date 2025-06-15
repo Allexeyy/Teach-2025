@@ -18,7 +18,10 @@ sudo cp /home/alexey/repo/index.html2 /var/www/html/index.html
 echo "Запуск Nginx..."
 sudo systemctl start apache2
 sudo systemctl enable apache2
+<<<<<<< HEAD
 sudo systemctl restart apache2
+=======
+>>>>>>> 1af4d2a (Master (#8))
 
 # Проверка статуса Apache
 echo "Проверка статуса Apache..."
